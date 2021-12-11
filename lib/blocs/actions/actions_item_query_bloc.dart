@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:junior_test/blocs/base/BaseBloc.dart';
-import 'package:junior_test/model/RootResponse.dart';
+import 'package:junior_test/model/root_response.dart';
 import 'package:junior_test/resources/api/repository.dart';
 import 'package:rxdart/rxdart.dart';
 

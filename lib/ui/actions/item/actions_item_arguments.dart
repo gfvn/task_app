@@ -1,4 +1,4 @@
 class ActionsItemArguments {
-  int actionId;
+  final int actionId;
   ActionsItemArguments(this.actionId);
 }

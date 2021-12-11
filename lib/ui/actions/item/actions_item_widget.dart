@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:junior_test/blocs/actions/ActionsItemQueryBloc.dart';
+import 'package:junior_test/blocs/actions/actions_item_query_bloc.dart';
 import 'package:junior_test/blocs/base/bloc_provider.dart';
-import 'package:junior_test/model/RootResponse.dart';
-import 'package:junior_test/model/actions/PromoItem.dart';
+import 'package:junior_test/model/root_response.dart';
+import 'package:junior_test/model/actions/promo_item.dart';
 import 'package:junior_test/resources/api/RootType.dart';
 import 'package:junior_test/tools/MyColors.dart';
 import 'package:junior_test/tools/MyDimens.dart';
-import 'package:junior_test/ui/actions/item/ActionsItemArguments.dart';
 import 'package:junior_test/ui/base/NewBasePageState.dart';
+
+import 'actions_item_arguments.dart';
 
 class ActionsItemWidget extends StatefulWidget {
   static String TAG = "ActionsItemWidget";

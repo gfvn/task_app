@@ -28,7 +28,7 @@
  * THE SOFTWARE.
  */
 
-import 'package:junior_test/model/RootResponse.dart';
+import 'package:junior_test/model/root_response.dart';
 import 'package:junior_test/resources/api/RootType.dart';
 import 'package:rxdart/rxdart.dart';
 

@@ -1,5 +1,5 @@
 import 'package:junior_test/model/Page.dart';
-import 'package:junior_test/model/actions/PromoItem.dart';
+import 'package:junior_test/model/actions/promo_item.dart';
 
 class Promos {
   String _title;

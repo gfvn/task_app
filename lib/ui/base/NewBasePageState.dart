@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:junior_test/model/RootResponse.dart';
+import 'package:junior_test/model/root_response.dart';
 import 'package:junior_test/resources/api/RootType.dart';
 import 'package:junior_test/tools/MyColors.dart';
 import 'package:junior_test/tools/MyDimens.dart';

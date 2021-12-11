@@ -6,7 +6,7 @@ class MallLogoWidget extends StatelessWidget {
     return FittedBox(
         child: Stack(children: [
           Image(
-            image: AssetImage('mall_background.png'),
+            image: NetworkImage('https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png'),
             fit: BoxFit.cover,
           ),
           /*  Container(
