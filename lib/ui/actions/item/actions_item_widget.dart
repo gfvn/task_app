@@ -7,7 +7,7 @@ import 'package:junior_test/model/actions/promo_item.dart';
 import 'package:junior_test/resources/api/RootType.dart';
 import 'package:junior_test/tools/MyColors.dart';
 import 'package:junior_test/tools/MyDimens.dart';
-import 'package:junior_test/ui/base/NewBasePageState.dart';
+import 'package:junior_test/ui/base/new_base_page_state.dart';
 
 import 'actions_item_arguments.dart';
 

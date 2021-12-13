@@ -55,6 +55,7 @@ class PromoItem {
     data['shop_id'] = this._shop_id;
     data['name'] = this._name;
     data['description'] = this._description;
+
     data['img_full'] = this._imgFull;
     data['maplink'] = this._maplink;
     data['place'] = this._place;

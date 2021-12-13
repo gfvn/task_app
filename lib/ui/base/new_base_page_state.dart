@@ -8,8 +8,8 @@ import 'package:junior_test/tools/MyDimens.dart';
 import 'package:junior_test/tools/Strings.dart';
 import 'package:junior_test/tools/Tools.dart';
 import 'package:junior_test/ui/views/appbar/FixedAppBar.dart';
-import 'package:junior_test/ui/views/appbar/flexible/FlexAppBar.dart';
-import 'package:junior_test/ui/views/appbar/flexible/MallLogoWidget.dart';
+import 'package:junior_test/ui/views/appbar/flexible/flex_app_bar.dart';
+import 'package:junior_test/ui/views/appbar/flexible/mall_logo_widget.dart';
 
 abstract class NewBasePageState<T extends StatefulWidget> extends State<T> {
   Widget appbar;
@@ -37,7 +37,10 @@ abstract class NewBasePageState<T extends StatefulWidget> extends State<T> {
   @override
   Widget build(BuildContext context) {
     return getNetworkAppBar(
-        getAppBarImage(), getBody(context), getAppBarTitle());
+      getAppBarImage(),
+      getBody(context),
+      getAppBarTitle(),
+    );
   }
 
   bool isCollapsed() {
@@ -47,30 +50,32 @@ abstract class NewBasePageState<T extends StatefulWidget> extends State<T> {
   Widget getNetworkAppBar(String appBarImageLink, Widget body, String title,
       {List<Widget> actions, Brightness brightness = Brightness.dark}) {
     Widget networkBackground = Container(
-        color: MyColors.grey_light,
-        child: Card(
-            margin: EdgeInsets.zero,
-            semanticContainer: true,
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(15),
-                  bottomRight: Radius.circular(15)),
+      color: MyColors.grey_light,
+      child: Card(
+        margin: EdgeInsets.zero,
+        semanticContainer: true,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(15),
+              bottomRight: Radius.circular(15)),
+        ),
+        child: CachedNetworkImage(
+          imageUrl: Tools.getImagePath(appBarImageLink),
+          placeholder: (context, url) =>
+              Center(child: CircularProgressIndicator()),
+          errorWidget: (context, url, error) =>
+              Image(image: NetworkImage('https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png')),
+          imageBuilder: (context, imageProvider) => Container(
+              decoration: BoxDecoration(
+            image: DecorationImage(
+              image: imageProvider,
+              fit: BoxFit.cover,
             ),
-            child: CachedNetworkImage(
-              imageUrl: Tools.getImagePath(appBarImageLink),
-              placeholder: (context, url) =>
-                  Center(child: CircularProgressIndicator()),
-              errorWidget: (context, url, error) =>
-                  Image(image: AssetImage('mall_background.png')),
-              imageBuilder: (context, imageProvider) => Container(
-                  decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: imageProvider,
-                  fit: BoxFit.cover,
-                ),
-              )),
-            )));
+          )),
+        ),
+      ),
+    );
     return FlexAppBar(title, networkBackground, body, isCollapsed(),
         actions: actions, brightness: brightness);
   }

@@ -52,7 +52,7 @@ class FlexAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (_tabCount == 0)
-        ? Scaffold(body: _getBaseAppBar(context))
+        ? MaterialApp(theme: ThemeData.dark(),home: Scaffold(body: _getBaseAppBar(context)))
         : _getBaseAppBarWithTabs(context);
   }
 
